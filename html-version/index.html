@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Revolución Inconclusa — José María Gutiérrez · Folio & Press</title>
+    <meta name="description" content="Una obra que examina los movimientos revolucionarios del siglo XX con perspectiva contemporánea.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="min-h-screen bg-background">
+        <!-- HEADER -->
+        <header class="sticky top-0 z-40 bg-ivory backdrop-blur-xl border-b border-border">
+            <!-- Utility bar -->
+            <div id="utility-bar" class="hidden-mobile bg-ink text-ivory text-xs">
+                <div class="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between">
+                    <div class="flex items-center gap-5">
+                        <span class="flex items-center gap-1.5">
+                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <polyline points="19 12 12 19 5 12"></polyline>
+                            </svg>
+                            Envío gratis a todo el mundo desde 45€
+                        </span>
+                        <span class="flex items-center gap-1.5 text-mint">
+                            <span class="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"></span>
+                            Impresión bajo demanda · entrega en 5–7 días
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <button class="flex items-center gap-1 hover:text-ivory transition">
+                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                            ES / EUR
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <a href="#" class="hover:text-ivory transition">Vende en Folio</a>
+                        <a href="#" class="hover:text-ivory transition">Editoriales</a>
+                        <a href="#" class="hover:text-ivory transition">Ayuda</a>
+                        <span class="flex items-center gap-1.5 text-ivory/70">
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            +34 911 234 567
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main bar -->
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="flex items-center gap-6 py-5">
+                    <button id="mobile-menu-btn" class="hidden-desktop -ml-1 p-1 text-foreground" aria-label="Menú">
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+
+                    <a href="/" class="flex items-baseline gap-1 mr-2">
+                        <span class="font-display text-2xl font-medium tracking-tight text-ink">Folio</span>
+                        <span class="text-coral font-display text-2xl">&</span>
+                        <span class="font-display text-2xl font-medium tracking-tight text-ink">Press</span>
+                    </a>
+
+                    <!-- Search -->
+                    <div class="hidden-mobile flex-1 max-w-2xl hidden md:flex">
+                        <div class="group relative w-full">
+                            <div class="flex items-center rounded-full border border-border bg-card transition-all focus-within:border-coral focus-within:shadow-soft">
+                                <button class="flex items-center gap-1.5 pl-5 pr-3 py-3 text-sm text-muted-foreground border-r border-border hover:text-foreground transition">
+                                    Todos los catálogos
+                                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <input
+                                    type="search"
+                                    placeholder="Busca entre 1,2M de títulos, autores, ISBN, editoriales…"
+                                    class="flex-1 bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none"
+                                />
+                                <button class="m-1 flex items-center gap-2 rounded-full bg-coral px-5 py-2.5 text-sm font-medium text-white hover:brightness-110 transition shadow-sm">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.35-4.35"></path>
+                                    </svg>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right actions -->
+                    <div class="ml-auto flex items-center gap-1 md:gap-2">
+                        <button class="hidden sm:flex items-center gap-2 rounded-full px-3 py-2 text-sm hover:bg-cream transition">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="hidden lg:inline">Mi cuenta</span>
+                        </button>
+                        <button class="hidden sm:grid h-10 w-10 place-items-center rounded-full hover:bg-cream transition" aria-label="Favoritos">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <button class="relative flex items-center gap-2 rounded-full bg-cream px-4 py-2.5 hover:bg-coral-soft transition">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="hidden sm:inline text-sm font-medium">Carrito</span>
+                            <span class="absolute -top-1 -right-1 grid h-5 w-5 place-items-center rounded-full bg-coral text-white text-[10px] font-semibold">3</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nav row -->
+                <nav id="nav-row" class="hidden-mobile hidden md:flex items-center gap-7 pb-3 text-sm text-foreground/80">
+                    <button id="categories-btn" class="relative flex items-center gap-2 rounded-full bg-coral text-white px-4 py-1.5 font-medium hover:brightness-110 transition shadow-sm">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        Categorías
+                        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <a href="/catalogo" class="hover:text-coral transition">Catálogo</a>
+                    <a href="#" class="hover:text-coral transition">Más vendidos</a>
+                    <a href="#" class="hover:text-coral transition">Novedades</a>
+                    <a href="#" class="hover:text-coral transition">Universitario</a>
+                    <a href="#" class="hover:text-coral transition">Recomendados</a>
+                    <a href="#" class="flex items-center gap-1.5 text-coral hover:text-ink transition font-medium">
+                        <span class="inline-block h-1.5 w-1.5 rounded-full bg-coral animate-pulse"></span>
+                        Hasta 30% de descuento
+                    </a>
+                    <span class="ml-auto text-xs text-muted-foreground">320+ editoriales · 14 idiomas</span>
+                </nav>
+            </div>
+
+            <!-- Mega menu -->
+            <div id="mega-menu" class="hidden absolute left-0 right-0 top-full bg-card border-b border-border shadow-lift animate-in fade-in slide-in-from-top-2 duration-200">
+                <div class="mx-auto max-w-7xl px-6 py-10 grid grid-cols-12 gap-10">
+                    <div class="col-span-3">
+                        <div class="text-[11px] uppercase tracking-widest text-muted-foreground mb-4">Explorar por</div>
+                        <ul class="space-y-2.5">
+                            <li class="flex items-baseline justify-between gap-3 group cursor-pointer">
+                                <span class="text-foreground group-hover:text-coral transition font-medium">Ficción literaria</span>
+                                <span class="text-xs text-muted-foreground">8,240</span>
+                            </li>
+                            <li class="flex items-baseline justify-between gap-3 group cursor-pointer">
+                                <span class="text-foreground group-hover:text-coral transition font-medium">Misterio y thriller</span>
+                                <span class="text-xs text-muted-foreground">3,120</span>
+                            </li>
+                            <li class="flex items-baseline justify-between gap-3 group cursor-pointer">
+                                <span class="text-foreground group-hover:text-coral transition font-medium">Ciencia ficción</span>
+                                <span class="text-xs text-muted-foreground">2,890</span>
+                            </li>
+                            <li class="flex items-baseline justify-between gap-3 group cursor-pointer">
+                                <span class="text-foreground group-hover:text-coral transition font-medium">Romance</span>
+                                <span class="text-xs text-muted-foreground">5,410</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="text-[11px] uppercase tracking-widest text-muted-foreground mb-4">Por género</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Ficción literaria</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Misterio y thriller</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Ciencia ficción</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Romance</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Poesía</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Ensayo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="text-[11px] uppercase tracking-widest text-muted-foreground mb-4">Académico</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Catálogos universitarios</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Adopción en curso</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Monografías</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Revistas</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Manuales</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="text-[11px] uppercase tracking-widest text-muted-foreground mb-4">Idiomas</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Español</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Inglés</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Francés</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Alemán</a></li>
+                            <li><a href="#" class="text-sm text-foreground/80 hover:text-coral transition">Italiano</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden border-t border-border px-6 py-4 space-y-3 bg-ivory">
+                <div class="flex items-center rounded-full border border-border bg-card px-4 py-3">
+                    <svg class="h-4 w-4 text-muted-foreground mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input class="flex-1 bg-transparent text-sm outline-none" placeholder="Buscar títulos…" />
+                </div>
+                <a href="/catalogo" class="block py-2 text-foreground border-b border-border/60">Catálogo</a>
+                <a href="#" class="block py-2 text-foreground border-b border-border/60">Más vendidos</a>
+                <a href="#" class="block py-2 text-foreground border-b border-border/60">Novedades</a>
+                <a href="#" class="block py-2 text-foreground border-b border-border/60">Universitario</a>
+                <a href="#" class="block py-2 text-foreground border-b border-border/60">Recomendados</a>
+                <a href="#" class="block py-2 text-foreground">Mi cuenta</a>
+            </div>
+        </header>
+
+        <!-- Breadcrumb -->
+        <div class="mx-auto max-w-7xl px-6 pt-6">
+            <nav class="text-xs text-muted-foreground flex items-center gap-1.5 flex-wrap">
+                <a href="/" class="hover:text-coral">Inicio</a>
+                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <a href="/catalogo" class="hover:text-coral">Catálogo</a>
+                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span class="hover:text-coral cursor-pointer">Ensayo</span>
+                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                <span class="text-foreground truncate">La Revolución Inconclusa</span>
+            </nav>
+        </div>
+
+        <!-- Hero PDP -->
+        <section class="mx-auto max-w-7xl px-6 py-10 grid lg:grid-cols-12 gap-12">
+            <!-- Left column: gallery + tabs -->
+            <div class="lg:col-span-6 space-y-8">
+                <!-- Book Cover -->
+                <div class="relative group/img">
+                    <div class="rounded-3xl bg-gradient-to-br from-blush via-cream to-coral-soft p-12 md:p-16 grid place-items-center overflow-hidden relative">
+                        <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, var(--ink) 1px, transparent 0px); background-size: 24px 24px;"></div>
+                        <div class="w-2/3 max-w-sm transform-gpu transition-all duration-700 ease-out hover:-rotate-3 hover:scale-105">
+                            <div class="book-cover rounded-lg overflow-hidden" style="--cover-c1: #c2654a; --cover-c2: #8a3a25;">
+                                <div class="w-full aspect-[3/4] flex items-center justify-center text-white font-display text-sm p-4 text-center">
+                                    La Revolución Inconclusa
+                                </div>
+                            </div>
+                        </div>
+                        <button class="absolute bottom-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur px-3 py-1.5 text-xs font-medium text-ink shadow-sm hover:bg-white">
+                            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                            Ampliar
+                        </button>
+                        <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-ink/85 backdrop-blur text-white px-3 py-1.5 text-[11px] font-medium">
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            248 personas viendo este libro
+                        </div>
+                    </div>
+                    <span class="absolute left-4 top-4 rounded-full bg-coral text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider">Lo más vendido</span>
+                    <span class="absolute right-4 top-4 grid h-16 w-16 place-items-center rounded-full bg-sun text-ink font-display text-lg rotate-12 shadow-lg">−15%</span>
+                </div>
+
+                <!-- Tabs -->
+                <div>
+                    <div class="border-b border-border flex gap-1">
+                        <button class="tab-btn active relative px-4 py-3 text-sm transition font-semibold" data-tab="desc">
+                            Descripción
+                            <span class="absolute inset-x-3 -bottom-px h-0.5 bg-coral"></span>
+                        </button>
+                        <button class="tab-btn relative px-4 py-3 text-sm transition text-muted-foreground hover:text-foreground" data-tab="specs">
+                            Especificaciones
+                        </button>
+                        <button class="tab-btn relative px-4 py-3 text-sm transition text-muted-foreground hover:text-foreground" data-tab="reviews">
+                            Reseñas (1,248)
+                        </button>
+                    </div>
+                    <div class="py-6">
+                        <div id="tab-desc" class="tab-content prose max-w-none">
+                            <p class="text-base text-foreground leading-relaxed">Una obra que examina los movimientos revolucionarios del siglo XX con perspectiva contemporánea. El autor José María Gutiérrez analiza los momentos críticos que moldearon la historia política moderna.</p>
+                            <p class="mt-4 text-sm text-foreground/80 leading-relaxed">Esta edición se fabrica bajo demanda en la imprenta partner más cercana a tu dirección, garantizando una calidad de impresión profesional con papel FSC certificado y tintas vegetales. Cada ejemplar es único.</p>
+                            <ul class="mt-5 space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-foreground">
+                                    <svg class="h-4 w-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Edición revisada y actualizada
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-foreground">
+                                    <svg class="h-4 w-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Encuadernación duradera
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-foreground">
+                                    <svg class="h-4 w-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Papel FSC libre de cloro
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-foreground">
+                                    <svg class="h-4 w-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Disponible en español
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="tab-specs" class="tab-content hidden">
+                            <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1 text-sm">
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">Editorial</dt>
+                                    <dd class="font-medium text-foreground text-right">Penguin Books</dd>
+                                </div>
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">Autor</dt>
+                                    <dd class="font-medium text-foreground text-right">José María Gutiérrez</dd>
+                                </div>
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">Año de publicación</dt>
+                                    <dd class="font-medium text-foreground text-right">2024</dd>
+                                </div>
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">Páginas</dt>
+                                    <dd class="font-medium text-foreground text-right">432</dd>
+                                </div>
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">Idioma</dt>
+                                    <dd class="font-medium text-foreground text-right">Español</dd>
+                                </div>
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">ISBN</dt>
+                                    <dd class="font-medium text-foreground text-right">978-84-1234567-8</dd>
+                                </div>
+                                <div class="flex justify-between border-b border-border py-2.5">
+                                    <dt class="text-muted-foreground">Categoría</dt>
+                                    <dd class="font-medium text-foreground text-right">Ensayo</dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        <div id="tab-reviews" class="tab-content hidden space-y-5">
+                            <div class="flex items-center gap-6 rounded-2xl bg-cream p-5">
+                                <div class="text-center">
+                                    <div class="font-display text-4xl text-ink">4.7</div>
+                                    <div class="flex justify-center mt-1">
+                                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                                    </div>
+                                    <div class="text-xs text-muted-foreground mt-1">1,248 reseñas</div>
+                                </div>
+                                <div class="flex-1 space-y-1.5">
+                                    <div class="flex items-center gap-3 text-xs">
+                                        <span class="w-6 text-muted-foreground">5★</span>
+                                        <div class="flex-1 h-1.5 rounded-full bg-border overflow-hidden">
+                                            <div class="h-full bg-sun" style="width: 78%;"></div>
+                                        </div>
+                                        <span class="w-10 text-right text-muted-foreground">78%</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-xs">
+                                        <span class="w-6 text-muted-foreground">4★</span>
+                                        <div class="flex-1 h-1.5 rounded-full bg-border overflow-hidden">
+                                            <div class="h-full bg-sun" style="width: 16%;"></div>
+                                        </div>
+                                        <span class="w-10 text-right text-muted-foreground">16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side info cards -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="rounded-2xl bg-grape text-white p-5 sm:col-span-2">
+                        <div class="text-[11px] uppercase tracking-wider opacity-80">Sobre el autor</div>
+                        <div class="mt-2 font-display text-2xl">José María Gutiérrez</div>
+                        <p class="mt-2 text-sm text-white/80">Autor publicado en Penguin. Sus obras combinan rigor académico con una narrativa accesible.</p>
+                        <a href="#" class="mt-3 inline-block text-sm border-b border-white/60 pb-0.5 hover:border-white">Ver más libros del autor</a>
+                    </div>
+                    <div class="rounded-2xl bg-blush text-ink p-5">
+                        <div class="text-[11px] uppercase tracking-wider text-coral font-semibold">Envío internacional</div>
+                        <div class="mt-2 text-sm">Entrega estimada entre el <strong>lun. 26 mayo</strong> y el mié. 28 mayo.</div>
+                        <div class="mt-2 text-xs text-ink/70">Imprenta asignada: Madrid 🇪🇸</div>
+                    </div>
+                    <div class="rounded-2xl border border-border bg-white p-5">
+                        <div class="text-[11px] uppercase tracking-wider text-mint font-semibold">Tu compra apoya</div>
+                        <ul class="mt-2 space-y-1.5 text-sm text-foreground">
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                                </svg>
+                                Reforestación · 1 árbol/pedido
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg>
+                                Editoriales independientes
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-grape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 4V2M8 4V2M2 11h20"></path>
+                                </svg>
+                                Royalties directos al autor
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: Price and purchase -->
+            <div class="lg:col-span-6">
+                <div class="flex items-center gap-2 flex-wrap text-[11px] uppercase tracking-[0.2em] font-semibold">
+                    <span class="text-coral">Cocina</span>
+                    <span class="text-muted-foreground">·</span>
+                    <span class="text-muted-foreground">Petite Maison</span>
+                    <span class="ml-1 inline-flex items-center gap-1 rounded-full bg-mint/15 text-mint px-2 py-0.5 normal-case tracking-normal">
+                        <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Editor verificado
+                    </span>
+                </div>
+                <h1 class="mt-3 font-display text-4xl md:text-5xl text-ink leading-tight">Tierra salvaje, fuego lento</h1>
+                <p class="mt-3 text-lg text-muted-foreground">por <a href="#" class="text-foreground hover:text-coral underline-offset-4 hover:underline">Elise Beaumont</a></p>
+
+                <div class="mt-4 flex items-center gap-3 text-sm">
+                    <div class="flex">
+                        <svg class="h-4 w-4 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-4 w-4 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-4 w-4 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-4 w-4 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-4 w-4 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                    </div>
+                    <span class="font-medium text-foreground">4.7</span>
+                    <a href="#reviews" class="text-muted-foreground hover:text-coral">(1,248 reseñas)</a>
+                    <span class="h-4 w-px bg-border"></span>
+                    <span class="text-muted-foreground inline-flex items-center gap-1">
+                        <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        978-84-1234567-8
+                    </span>
+                </div>
+
+                <!-- Key highlights -->
+                <ul class="mt-5 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-foreground/85">
+                    <li class="inline-flex items-center gap-2">
+                        <svg class="h-3.5 w-3.5 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        432 páginas
+                    </li>
+                    <li class="inline-flex items-center gap-2">
+                        <svg class="h-3.5 w-3.5 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                        Español
+                    </li>
+                    <li class="inline-flex items-center gap-2">
+                        <svg class="h-3.5 w-3.5 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                        Edición 2024
+                    </li>
+                    <li class="inline-flex items-center gap-2">
+                        <svg class="h-3.5 w-3.5 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M2 12h20M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20"></path>
+                        </svg>
+                        Papel FSC · tinta vegetal
+                    </li>
+                </ul>
+
+                <!-- Price card -->
+                <div class="mt-7 rounded-3xl border border-border bg-white p-6 space-y-5 shadow-soft">
+                    <div class="flex items-baseline gap-3">
+                        <span class="font-display text-4xl text-coral font-semibold">28.00 €</span>
+                        <span class="text-lg text-muted-foreground line-through">—</span>
+                        <span class="rounded-full bg-coral-soft text-coral px-2.5 py-0.5 text-xs font-semibold">—</span>
+                    </div>
+                    <div class="text-xs text-muted-foreground -mt-3">o 3 plazos sin intereses de <span class="font-semibold text-foreground">9.33 €</span> con Klarna</div>
+
+                    <!-- Stock urgency -->
+                    <div class="rounded-2xl bg-coral-soft/60 border border-coral/20 p-3 space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="inline-flex items-center gap-1.5 font-medium text-ink">
+                                <svg class="h-4 w-4 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13.5 1H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10.5"></path>
+                                    <path d="M13.5 1v9h9"></path>
+                                </svg>
+                                Alta demanda
+                            </span>
+                            <span class="text-coral font-semibold">12 ejemplares en imprenta cercana</span>
+                        </div>
+                        <div class="h-1.5 rounded-full bg-white overflow-hidden">
+                            <div class="h-full bg-coral" style="width: 28%;"></div>
+                        </div>
+                        <div class="text-[11px] text-ink/70">Reimpresión automática · listo para imprimir en 24 h</div>
+                    </div>
+
+                    <!-- Format -->
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-xs uppercase tracking-wider text-muted-foreground">Formato</div>
+                            <a href="#" class="text-xs text-coral hover:underline">Comparar formatos</a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="format-btn flex-1 rounded-xl border-2 border-coral bg-coral-soft/50 text-ink px-4 py-3 text-sm font-medium transition text-left relative active" data-format="soft">
+                                <svg class="absolute top-2 right-2 h-4 w-4 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <div>Tapa blanda</div>
+                                <span class="block text-xs text-muted-foreground mt-0.5">29.90 €</span>
+                            </button>
+                            <button class="format-btn flex-1 rounded-xl border-2 border-border hover:border-foreground px-4 py-3 text-sm font-medium transition text-left relative" data-format="hard">
+                                <div>Tapa dura</div>
+                                <span class="block text-xs text-muted-foreground mt-0.5">41.86 €</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Gift option -->
+                    <label class="flex items-start gap-3 rounded-xl border border-dashed border-border p-3 cursor-pointer hover:border-coral transition">
+                        <input type="checkbox" class="mt-0.5 h-4 w-4 accent-coral" />
+                        <div class="flex-1">
+                            <div class="text-sm font-medium text-foreground inline-flex items-center gap-1.5">
+                                <svg class="h-4 w-4 text-grape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                    <path d="M6 18a6 6 0 0 0 12 0"></path>
+                                    <line x1="6" y1="9" x2="18" y2="9"></line>
+                                </svg>
+                                Envolver como regalo (+3,90 €)
+                            </div>
+                            <div class="text-xs text-muted-foreground">Papel kraft con sello editorial + tarjeta personalizada</div>
+                        </div>
+                    </label>
+
+                    <!-- Qty + CTA -->
+                    <div class="flex items-stretch gap-3">
+                        <div class="flex items-center border-2 border-border rounded-full">
+                            <button id="qty-minus" class="grid h-12 w-12 place-items-center hover:bg-cream rounded-l-full">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <span id="qty-display" class="w-10 text-center font-medium">1</span>
+                            <button id="qty-plus" class="grid h-12 w-12 place-items-center hover:bg-cream rounded-r-full">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <button id="add-cart" class="flex-1 group inline-flex items-center justify-center gap-2 rounded-full bg-coral text-white px-6 py-3 font-medium hover:brightness-110 transition shadow-[0_8px_24px_-8px_oklch(0.68_0.19_30/0.6)] active:scale-[0.99]">
+                            <svg class="h-4 w-4 transition group-hover:-rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span id="add-cart-text">Añadir — 29.90 €</span>
+                        </button>
+                    </div>
+
+                    <button class="w-full rounded-full bg-ink text-white py-3 font-medium hover:bg-grape transition inline-flex items-center justify-center gap-2">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v4"></path>
+                        </svg>
+                        Comprar ahora
+                    </button>
+
+                    <!-- Payment icons -->
+                    <div class="flex items-center justify-between gap-2 pt-1">
+                        <div class="flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                            <svg class="h-3.5 w-3.5 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-10h2v2h-2v-2z"></path>
+                            </svg>
+                            Pago cifrado
+                        </div>
+                        <div class="flex items-center gap-1.5 opacity-80">
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded border border-border bg-cream text-ink/70">VISA</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded border border-border bg-cream text-ink/70">MC</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded border border-border bg-cream text-ink/70">AMEX</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded border border-border bg-cream text-ink/70">PayPal</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded border border-border bg-cream text-ink/70">Klarna</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded border border-border bg-cream text-ink/70">Apple</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-sm text-muted-foreground pt-2 border-t border-border">
+                        <button class="inline-flex items-center gap-1.5 hover:text-coral">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            Guardar
+                        </button>
+                        <button class="inline-flex items-center gap-1.5 hover:text-coral">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <line x1="12" y1="12" x2="18" y2="5"></line>
+                                <path d="M4 20a6 6 0 1 0 12 0A6 6 0 0 0 4 20"></path>
+                            </svg>
+                            Compartir
+                        </button>
+                        <button class="ml-auto inline-flex items-center gap-1.5 hover:text-coral">Comparar</button>
+                    </div>
+                </div>
+
+                <!-- Shipping estimator -->
+                <div class="mt-4 rounded-2xl border border-border bg-white p-4">
+                    <div class="flex items-center gap-2 text-sm font-medium text-ink">
+                        <svg class="h-4 w-4 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                        Calcula la entrega
+                    </div>
+                    <div class="mt-3 flex gap-2">
+                        <div class="flex-1 inline-flex items-center gap-2 rounded-full border border-border px-3 h-11 focus-within:border-coral">
+                            <svg class="h-4 w-4 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <input
+                                type="text"
+                                placeholder="Código postal"
+                                class="flex-1 bg-transparent outline-none text-sm"
+                                id="zip-input"
+                            />
+                        </div>
+                        <button class="rounded-full bg-ink text-white text-sm px-5 hover:bg-coral transition">Calcular</button>
+                    </div>
+                    <div class="mt-3 grid sm:grid-cols-2 gap-2 text-xs">
+                        <div class="rounded-xl bg-cream p-3">
+                            <div class="font-medium text-foreground">Estándar · Gratis desde 45 €</div>
+                            <div class="text-muted-foreground mt-0.5">Llega entre <strong class="text-foreground">lun. 26 mayo</strong> y mié. 28 mayo</div>
+                        </div>
+                        <div class="rounded-xl bg-grape-soft/40 p-3 border border-grape/20">
+                            <div class="font-medium text-foreground">Express DHL · 4,90 €</div>
+                            <div class="text-muted-foreground mt-0.5">Mañana <strong class="text-foreground">22 mayo</strong> antes de 14 h</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust list -->
+                <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                    <div class="flex items-center gap-2 text-foreground">
+                        <svg class="h-4 w-4 text-coral shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                        Envío gratis desde 45€
+                    </div>
+                    <div class="flex items-center gap-2 text-foreground">
+                        <svg class="h-4 w-4 text-coral shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 7v6h6"></path>
+                            <path d="M21 17a9 9 0 00-9-9 9.75 9.75 0 00-6.74 2.74L3 13"></path>
+                        </svg>
+                        30 días para devolverlo
+                    </div>
+                    <div class="flex items-center gap-2 text-foreground">
+                        <svg class="h-4 w-4 text-coral shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Impresión carbono neutro
+                    </div>
+                    <div class="flex items-center gap-2 text-foreground">
+                        <svg class="h-4 w-4 text-coral shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Pago 100% seguro
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bundle Section -->
+        <section class="mx-auto max-w-7xl px-6 pb-10">
+            <div class="rounded-3xl bg-gradient-to-br from-grape-soft/50 via-blush/60 to-coral-soft/50 p-6 md:p-10">
+                <div class="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-grape font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    Llévatelos juntos
+                </div>
+                <h2 class="mt-2 font-display text-3xl text-ink">Pack recomendado — ahorra un 10 %</h2>
+
+                <div class="mt-8 grid lg:grid-cols-3 gap-6 items-center">
+                    <div class="lg:col-span-2 flex items-center gap-3 md:gap-6 flex-wrap">
+                        <!-- Main book -->
+                        <div class="flex items-center gap-3 md:gap-6">
+                            <label class="flex flex-col items-center gap-2 cursor-pointer">
+                                <div class="w-24 md:w-28">
+                                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4]" style="--cover-c1: #c2654a; --cover-c2: #8a3a25;"></div>
+                                </div>
+                                <div class="text-center max-w-[7rem]">
+                                    <div class="text-xs font-medium text-ink truncate">La Revolución Inconclusa</div>
+                                    <div class="text-xs text-coral font-semibold">29.90 €</div>
+                                </div>
+                                <input type="checkbox" checked disabled class="h-4 w-4 accent-coral" />
+                            </label>
+                            <svg class="h-5 w-5 text-grape shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </div>
+
+                        <!-- Bundle books -->
+                        <div class="flex items-center gap-3 md:gap-6">
+                            <label class="flex flex-col items-center gap-2 cursor-pointer">
+                                <div class="w-24 md:w-28">
+                                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4]" style="--cover-c1: #4a5c68; --cover-c2: #2a3c48;"></div>
+                                </div>
+                                <div class="text-center max-w-[7rem]">
+                                    <div class="text-xs font-medium text-ink truncate">Otro Título</div>
+                                    <div class="text-xs text-coral font-semibold">24.90 €</div>
+                                </div>
+                                <input type="checkbox" class="h-4 w-4 accent-coral bundle-checkbox" data-price="24.90" />
+                            </label>
+                            <svg class="h-5 w-5 text-grape shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </div>
+
+                        <!-- Third book -->
+                        <div class="flex items-center gap-3 md:gap-6">
+                            <label class="flex flex-col items-center gap-2 cursor-pointer">
+                                <div class="w-24 md:w-28">
+                                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4]" style="--cover-c1: #8a4a2a; --cover-c2: #5a2a0a;"></div>
+                                </div>
+                                <div class="text-center max-w-[7rem]">
+                                    <div class="text-xs font-medium text-ink truncate">Más Títulos</div>
+                                    <div class="text-xs text-coral font-semibold">19.90 €</div>
+                                </div>
+                                <input type="checkbox" class="h-4 w-4 accent-coral bundle-checkbox" data-price="19.90" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Bundle summary -->
+                    <div class="rounded-2xl bg-white p-5">
+                        <div class="text-xs text-muted-foreground">Total del pack</div>
+                        <div class="mt-1 flex items-baseline gap-2">
+                            <span class="font-display text-3xl text-ink" id="bundle-total">29.90 €</span>
+                            <span class="text-sm text-muted-foreground line-through" id="bundle-original">29.90 €</span>
+                        </div>
+                        <div class="mt-1 text-xs text-mint font-medium" id="bundle-savings">Ahorras 0 €</div>
+                        <button class="mt-4 w-full rounded-full bg-coral text-white py-3 text-sm font-medium hover:brightness-110">Añadir pack al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mx-auto max-w-7xl px-6 pb-16 grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-4">
+                <div class="text-[11px] uppercase tracking-[0.2em] text-coral font-medium">Preguntas frecuentes</div>
+                <h2 class="mt-2 font-display text-3xl text-ink">Resuelve tus dudas antes de comprar</h2>
+                <p class="mt-3 text-sm text-muted-foreground">Nuestro equipo responde en menos de 2 horas, de lunes a sábado.</p>
+            </div>
+            <div class="lg:col-span-8 space-y-2">
+                <details class="faq-item group rounded-2xl border border-border bg-white px-5 py-4" open>
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <span class="font-medium text-ink">¿Cómo funciona la impresión bajo demanda?</span>
+                        <svg class="h-4 w-4 text-muted-foreground transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <p class="mt-3 text-sm text-foreground/80">Imprimimos tu libro en la imprenta certificada más cercana a tu dirección de envío, solo cuando lo pides. Esto reduce stock muerto y emisiones.</p>
+                </details>
+
+                <details class="faq-item group rounded-2xl border border-border bg-white px-5 py-4">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <span class="font-medium text-ink">¿Puedo devolverlo si no me gusta?</span>
+                        <svg class="h-4 w-4 text-muted-foreground transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <p class="mt-3 text-sm text-foreground/80">Sí. Tienes 30 días para devolverlo, incluso si fue impreso bajo demanda. Reembolso íntegro o cambio sin coste.</p>
+                </details>
+
+                <details class="faq-item group rounded-2xl border border-border bg-white px-5 py-4">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <span class="font-medium text-ink">¿Qué calidad tiene el papel?</span>
+                        <svg class="h-4 w-4 text-muted-foreground transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <p class="mt-3 text-sm text-foreground/80">Papel offset FSC de 90 g/m² para tapa blanda y 120 g/m² para tapa dura. Tintas vegetales certificadas.</p>
+                </details>
+
+                <details class="faq-item group rounded-2xl border border-border bg-white px-5 py-4">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <span class="font-medium text-ink">¿Hacéis facturas para universidades?</span>
+                        <svg class="h-4 w-4 text-muted-foreground transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <p class="mt-3 text-sm text-foreground/80">Sí, ofrecemos precios especiales para adopción académica y emitimos factura con IVA al instante.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Related Books Section -->
+        <section class="mx-auto max-w-7xl px-6 pb-20">
+            <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
+                <div>
+                    <div class="text-[11px] uppercase tracking-[0.2em] text-coral font-medium">También te puede interesar</div>
+                    <h2 class="mt-2 font-display text-3xl text-ink">Lectores que vieron este también vieron</h2>
+                </div>
+                <a href="/catalogo" class="text-sm text-foreground hover:text-coral inline-flex items-center gap-1">
+                    Ver más
+                    <svg class="h-4 w-4 -rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
+                <!-- Repeat this for each related book -->
+                <div class="group">
+                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4] mb-3" style="--cover-c1: #a67c52; --cover-c2: #6a4c32;"></div>
+                    <h3 class="text-sm font-medium text-foreground group-hover:text-coral transition">Título del Libro</h3>
+                    <p class="text-xs text-muted-foreground mt-1">Autor Ejemplo</p>
+                    <div class="mt-2 flex items-center gap-1">
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 text-border" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <span class="text-xs text-muted-foreground ml-1">(248)</span>
+                    </div>
+                    <p class="text-sm text-coral font-semibold mt-2">19.90 €</p>
+                </div>
+                <div class="group">
+                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4] mb-3" style="--cover-c1: #8a4a2a; --cover-c2: #5a2a0a;"></div>
+                    <h3 class="text-sm font-medium text-foreground group-hover:text-coral transition">Otro Libro</h3>
+                    <p class="text-xs text-muted-foreground mt-1">Otro Autor</p>
+                    <div class="mt-2 flex items-center gap-1">
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 text-border" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <span class="text-xs text-muted-foreground ml-1">(156)</span>
+                    </div>
+                    <p class="text-sm text-coral font-semibold mt-2">24.90 €</p>
+                </div>
+                <div class="group">
+                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4] mb-3" style="--cover-c1: #4a5c68; --cover-c2: #2a3c48;"></div>
+                    <h3 class="text-sm font-medium text-foreground group-hover:text-coral transition">Más Libros</h3>
+                    <p class="text-xs text-muted-foreground mt-1">Más Autores</p>
+                    <div class="mt-2 flex items-center gap-1">
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <span class="text-xs text-muted-foreground ml-1">(420)</span>
+                    </div>
+                    <p class="text-sm text-coral font-semibold mt-2">34.90 €</p>
+                </div>
+                <div class="group">
+                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4] mb-3" style="--cover-c1: #c2654a; --cover-c2: #8a3a25;"></div>
+                    <h3 class="text-sm font-medium text-foreground group-hover:text-coral transition">Un Libro Más</h3>
+                    <p class="text-xs text-muted-foreground mt-1">Un Autor Más</p>
+                    <div class="mt-2 flex items-center gap-1">
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 fill-sun text-sun" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <svg class="h-3.5 w-3.5 text-border" viewBox="0 0 24 24"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 19.85 24.07 12 18.41 4.15 24.07 6.23 16.01 0 10.35 8.91 10.26 12 2"></polygon></svg>
+                        <span class="text-xs text-muted-foreground ml-1">(89)</span>
+                    </div>
+                    <p class="text-sm text-coral font-semibold mt-2">29.90 €</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Add-to-cart Bar -->
+        <div id="sticky-cart" class="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-white/95 backdrop-blur shadow-lift transition-all duration-500 ease-out pointer-events-none opacity-0 translate-y-full" style="padding-bottom: env(safe-area-inset-bottom);">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 py-2.5 sm:py-3 flex items-center gap-3 sm:gap-4">
+                <div class="hidden sm:block w-10 shrink-0">
+                    <div class="book-cover rounded-lg overflow-hidden w-full aspect-[3/4]" style="--cover-c1: #c2654a; --cover-c2: #8a3a25;"></div>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="text-sm font-medium text-ink truncate">La Revolución Inconclusa</div>
+                    <div class="text-xs text-muted-foreground truncate">
+                        <span id="sticky-format">Tapa blanda</span> ·
+                        <span class="sm:hidden font-semibold text-coral" id="sticky-price">29.90 €</span>
+                        <span class="hidden sm:inline">José María Gutiérrez</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-baseline gap-2">
+                    <span class="font-display text-xl text-coral font-semibold" id="sticky-price-large">29.90 €</span>
+                </div>
+                <button class="inline-flex items-center gap-2 rounded-full bg-coral text-white px-4 sm:px-5 py-2.5 text-sm font-medium hover:brightness-110 active:scale-[0.98] transition shrink-0">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="hidden xs:inline sm:inline">Añadir</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="sticky-spacer" class="transition-all duration-300" style="height: 0;"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
