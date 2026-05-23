@@ -1,0 +1,5 @@
+{
+  "buildCommand": "echo 'Static files deployment'",
+  "outputDirectory": ".",
+  "public": false
+}
